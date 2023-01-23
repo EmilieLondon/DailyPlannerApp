@@ -13,5 +13,7 @@ Events persist between refreshes of a page.
 
 https://emilielondon.github.io/DailyPlannerApp
 
+<img width="1029" alt="image" src="https://user-images.githubusercontent.com/91503119/214078031-1597b7db-d991-457f-8074-f8853d81e825.png">
+
 ## License
 MIT License
