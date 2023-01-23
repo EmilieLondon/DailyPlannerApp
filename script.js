@@ -9,35 +9,6 @@ let button;
 let textArea;
 let hourDiv;
 
-// $(document).ready(function(){
-// let $currentDate = $('currentDay');
-// let $currentTime = moment().format('h:mm:ss A');
-// let $currentHour = moment().format('h A');
-
-// setInterval(() => {
-//     let time = moment().format('dddd, MMM Do, h:mm:ss A');
-//     $currentDate.text(time);
-// }, 1000);
-
-// let businessHours = [9,10,11,12,1,2,3,4,5];
-// let $timeBlockContainerEl = $('container');
-// businessHours.forEach((hour, index) => {
-//     $timeBlockContainerEl.append(
-//         `
-//         <div class="row">
-//         <p class="col hour time-block">${hour}${index >= 3 ? "PM" : "AM"}</p>
-//         <textarea class="col-10" name="description" id="description"></textarea>
-//         <button class="col btn saveBtn" type="button>
-//         <i class="fas fa-unlock"></i>
-//         </button>
-//         </div>
-//         `
-
-//     );
-// });
-
-// })
-
 toDisplayCurrentDay()
 createTimeBlocks()
 
@@ -75,3 +46,9 @@ for (var i = 9; i < 18; i++) {
         timeToDisplay = moment(i.toString(), ["HH"]).add(1, "hour").format("hh A")
     }
 }
+    
+$(".saveBtn").click(function () {
+    $(this).children("i").removeClass("fa fa-unlock")
+    $(this).children("i").addClass("fa fa-lock")
+    localStorage.setItem(`${$(this).attr("item-Number")}`, $(this).siblings("textarea").val())
+})
